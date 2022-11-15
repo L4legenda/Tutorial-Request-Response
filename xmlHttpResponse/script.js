@@ -29,14 +29,52 @@
 
 
 
+
+
+
+
     // Example FormData
 
     const fileElement = document.querySelector('#file')
 
-    const formData = new FormData();
+    const formData = new FormData()
     formData.append("name", "qwe")
     formData.append("file", fileElement.files[0])
 
     xhr.send(formData)
+
+
+
+
+
+
+
+    // Example Problem
+
+    let xhr2 = new XMLHttpRequest();
+
+    xhr2.open("GET", 'http://127.0.0.1:8000');
+
+    xhr2.setRequestHeader('Content-Type', 'application/json;charset=utf-8');
+
+    xhr2.onload = function () {
+        console.log(xhr.response);
+
+        let xhr2 = new XMLHttpRequest();
+
+        xhr2.open("GET", 'http://127.0.0.1:8000');
+
+        xhr2.setRequestHeader('Content-Type', 'application/json;charset=utf-8');
+
+        xhr2.onload = function () {
+            console.log(xhr.response);
+        }
+
+        xhr.send(JSON.stringify(xhr.response))
+    }
+
+    xhr.send(JSON.stringify({
+        'awesome': 'name',
+    }))
 
 })()

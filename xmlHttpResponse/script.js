@@ -34,8 +34,7 @@
     const fileElement = document.querySelector('#file')
 
     const formData = new FormData();
-    formData.append("string", "qwe")
-    formData.append("number", "1")
+    formData.append("name", "qwe")
     formData.append("file", fileElement.files[0])
 
     xhr.send(formData)
